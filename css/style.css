@@ -17,6 +17,9 @@ body{
 html{
     scroll-behavior: smooth;
 }
+body, html {
+    overflow-x: hidden;
+}
 .container{
     padding-left: 15px;
     padding-right: 15px;
@@ -24,9 +27,9 @@ html{
     margin-right: auto;
 }
 /* Small devices */
-@media (min-width: 767px) { 
+@media (min-width: 768px) { 
 	.container{
-        width: 752px;
+        width: 760px;
     }
  }
 
@@ -100,16 +103,20 @@ html{
 
 @media(max-width:767px),(max-width: 992px){
     .header .links ul{
-        display: flex;
         position: absolute;
         top: 70px;
-        right: 30px;
+        right: 0;
+        height: 250px;
+        width: 100%;
+        display: flex;
         flex-direction: column;
         padding-right: 30px;
         background-color: var(--secound-color);
-        border-radius: 10px;
+        align-items: center;
+        box-shadow: 0 30px 20px rgb(0 0 0 / 30%);
         gap: 0;
         overflow: hidden;
+        z-index: 999;
     }
     .header .links ul li{
         padding: 20px;
@@ -119,7 +126,7 @@ html{
      }
     
     .header .links i{
-        display:block ;
+        display:block;
     }
     #menuList{
         transition: all 0.5s;
@@ -268,6 +275,13 @@ html{
 }
 .portfolio .portfolio-contact .card{
     background-color: #fff;
+    box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
+    transition: transform 0.3s;
+}
+.portfolio .portfolio-contact .card:hover{
+    box-shadow: 0 2px 15px rgb(0 0 0 / 20%);
+    transform: translateY(-10px);
+    
 }
 .portfolio .portfolio-contact .card img{
     max-width: 100%;
@@ -293,6 +307,10 @@ html{
     border: 2px solid #000;
     background-color: #fff;
     padding: 10px;
+}
+.portfolio .buttons button:hover{
+    color: var(--main-color);
+    font-weight: bold;
 }
 /* End portfolio */
 
@@ -359,6 +377,13 @@ html{
         flex-direction: column;
     }
 }
+@media (max-width: 767px) {
+    .about .about-contact .text {
+        width: 100% !important;
+        padding: 0 50px !important;
+        box-sizing: border-box;
+    }
+}
 
 /* End about */
 
@@ -415,5 +440,3 @@ html{
     color: var(--main-color);
 }
 /* End Footer */
-
-
